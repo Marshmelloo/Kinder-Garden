@@ -281,7 +281,7 @@ var settings = {
 
 		// Menu.
 			$('#menu')
-				.append('<a href="#menu" class="close"></a>')
+				.append('<a href="#menu" class="close"><i class="fa fa-times"></i></a>')
 				.appendTo($body)
 				.panel({
 					delay: 500,
@@ -312,4 +312,33 @@ var settings = {
 
 	});
 
+	$(window).on("scroll", function() {
+
+		var vScroll = $(this).scrollTop();
+	
+		if( vScroll > 100) {
+			$(".navbar").addClass("sticky");
+		}
+		else {
+			$(".navbar").removeClass("sticky");
+		}
+	
+	});
+
+	// popup
+	$(document).ready(function() {
+		$('.gallery-item').magnificPopup({
+			type: 'image',
+			gallery:{
+			  enabled:true
+			}
+		  });
+	});
+
+	
+
 })(jQuery);
+
+
+
+
